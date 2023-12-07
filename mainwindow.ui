@@ -6,19 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>372</width>
+    <width>400</width>
     <height>260</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>372</width>
+    <width>400</width>
     <height>260</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>372</width>
+    <width>400</width>
     <height>260</height>
    </size>
   </property>
@@ -34,13 +34,13 @@
    </property>
    <property name="minimumSize">
     <size>
-     <width>372</width>
+     <width>400</width>
      <height>260</height>
     </size>
    </property>
    <property name="maximumSize">
     <size>
-     <width>372</width>
+     <width>400</width>
      <height>260</height>
     </size>
    </property>
@@ -55,14 +55,14 @@
       </property>
       <property name="minimumSize">
        <size>
-        <width>355</width>
-        <height>65</height>
+        <width>380</width>
+        <height>75</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>355</width>
-        <height>65</height>
+        <width>380</width>
+        <height>70</height>
        </size>
       </property>
       <property name="styleSheet">
@@ -85,22 +85,22 @@ QGroupBox::title {
       <widget class="QLabel" name="labelTitle">
        <property name="geometry">
         <rect>
-         <x>10</x>
+         <x>4</x>
          <y>10</y>
-         <width>330</width>
-         <height>50</height>
+         <width>371</width>
+         <height>61</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>20</pointsize>
+         <pointsize>18</pointsize>
          <weight>50</weight>
          <italic>false</italic>
          <bold>false</bold>
         </font>
        </property>
        <property name="text">
-        <string>Bakeout</string>
+        <string>Vacuum BakeOut Heating System</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -230,13 +230,13 @@ QGroupBox::title {
       </property>
       <property name="minimumSize">
        <size>
-        <width>355</width>
+        <width>380</width>
         <height>65</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>355</width>
+        <width>380</width>
         <height>65</height>
        </size>
       </property>

@@ -51,7 +51,7 @@ QGroupBox::title {
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <pointsize>18</pointsize>
        <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>
@@ -91,10 +91,20 @@ QGroupBox::title {
     <property name="title">
      <string/>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0">
+    <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0,0">
      <property name="spacing">
       <number>0</number>
      </property>
+     <item>
+      <widget class="QEPushButton" name="btnReset">
+       <property name="text">
+        <string>Reset</string>
+       </property>
+       <property name="variable" stdset="0">
+        <string>Heaters:reset</string>
+       </property>
+      </widget>
+     </item>
      <item>
       <spacer name="horizontalSpacer_2">
        <property name="orientation">
@@ -131,6 +141,13 @@ QGroupBox::title {
    </widget>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QEPushButton</class>
+   <extends>QPushButton</extends>
+   <header>QEPushButton.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

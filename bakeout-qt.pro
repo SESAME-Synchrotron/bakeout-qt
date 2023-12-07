@@ -15,21 +15,24 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     tempgraphs1to8.cpp \
-    tempgraphs9to16.cpp
+    tempgraphs9to16.cpp \
+    widgets/heater_widget.cpp
 
 HEADERS += \
     heaters1to8.h \
     heaters9to16.h \
     mainwindow.h \
     tempgraphs1to8.h \
-    tempgraphs9to16.h
+    tempgraphs9to16.h \
+    widgets/heater_widget.h
 
 FORMS += \
     heaters1to8.ui \
     heaters9to16.ui \
     mainwindow.ui \
     tempgraphs1to8.ui \
-    tempgraphs9to16.ui
+    tempgraphs9to16.ui \
+    widgets/heater_widget.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

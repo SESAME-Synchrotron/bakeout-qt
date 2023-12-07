@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>heater_widget</class>
+ <widget class="QMainWindow" name="heater_widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>88</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>1081</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 0.5em;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 3px 0 3px;
+}
+</string>
+    </property>
+    <property name="title">
+     <string>Heater Name</string>
+    </property>
+    <widget class="QESimpleShape" name="ledHeaterEnable">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>27</y>
+       <width>30</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="colour0" stdset="0">
+      <color>
+       <red>5</red>
+       <green>240</green>
+       <blue>5</blue>
+      </color>
+     </property>
+     <property name="colour1" stdset="0">
+      <color>
+       <red>186</red>
+       <green>189</green>
+       <blue>182</blue>
+      </color>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):isEnabled</string>
+     </property>
+    </widget>
+    <widget class="QEPushButton" name="btnHeaterEnable">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>25</y>
+       <width>65</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Enable</string>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):enable</string>
+     </property>
+    </widget>
+    <widget class="QEPushButton" name="btnHeaterDisable">
+     <property name="geometry">
+      <rect>
+       <x>105</x>
+       <y>25</y>
+       <width>65</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Disable</string>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):disable</string>
+     </property>
+    </widget>
+    <widget class="QELabel" name="temperatureReading">
+     <property name="geometry">
+      <rect>
+       <x>190</x>
+       <y>26</y>
+       <width>60</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):getTemp</string>
+     </property>
+    </widget>
+    <widget class="QESimpleShape" name="ledHeaterStatus">
+     <property name="geometry">
+      <rect>
+       <x>251</x>
+       <y>27</y>
+       <width>30</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="colour0" stdset="0">
+      <color>
+       <red>5</red>
+       <green>240</green>
+       <blue>5</blue>
+      </color>
+     </property>
+     <property name="colour1" stdset="0">
+      <color>
+       <red>186</red>
+       <green>189</green>
+       <blue>182</blue>
+      </color>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):getStatus</string>
+     </property>
+    </widget>
+    <widget class="QENumericEdit" name="temperatureSetpoint">
+     <property name="geometry">
+      <rect>
+       <x>291</x>
+       <y>27</y>
+       <width>79</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):setSetPoint</string>
+     </property>
+    </widget>
+    <widget class="QELabel" name="temperatureSetpointReadback">
+     <property name="geometry">
+      <rect>
+       <x>370</x>
+       <y>28</y>
+       <width>60</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):getSetPoint</string>
+     </property>
+    </widget>
+    <widget class="QELabel" name="incrementSetPoint">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>28</y>
+       <width>60</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):getIncPoint</string>
+     </property>
+    </widget>
+    <widget class="QENumericEdit" name="temperatureSetRate">
+     <property name="geometry">
+      <rect>
+       <x>491</x>
+       <y>29</y>
+       <width>79</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):setRate</string>
+     </property>
+    </widget>
+    <widget class="QELabel" name="temperatureRateReadback">
+     <property name="geometry">
+      <rect>
+       <x>570</x>
+       <y>30</y>
+       <width>60</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):getRate</string>
+     </property>
+    </widget>
+    <widget class="QENumericEdit" name="interlockSetpoint">
+     <property name="geometry">
+      <rect>
+       <x>631</x>
+       <y>30</y>
+       <width>79</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):setInterlock</string>
+     </property>
+    </widget>
+    <widget class="QELabel" name="interlockReadback">
+     <property name="geometry">
+      <rect>
+       <x>710</x>
+       <y>31</y>
+       <width>60</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):getInterlock</string>
+     </property>
+    </widget>
+    <widget class="QESimpleShape" name="ledInterlockStatus">
+     <property name="geometry">
+      <rect>
+       <x>771</x>
+       <y>32</y>
+       <width>30</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="colour0" stdset="0">
+      <color>
+       <red>5</red>
+       <green>240</green>
+       <blue>5</blue>
+      </color>
+     </property>
+     <property name="colour1" stdset="0">
+      <color>
+       <red>186</red>
+       <green>189</green>
+       <blue>182</blue>
+      </color>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):isEnabled</string>
+     </property>
+    </widget>
+    <widget class="QESimpleShape" name="ledSaturationStatus">
+     <property name="geometry">
+      <rect>
+       <x>830</x>
+       <y>32</y>
+       <width>30</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="colour0" stdset="0">
+      <color>
+       <red>5</red>
+       <green>240</green>
+       <blue>5</blue>
+      </color>
+     </property>
+     <property name="colour1" stdset="0">
+      <color>
+       <red>186</red>
+       <green>189</green>
+       <blue>182</blue>
+      </color>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):isSat</string>
+     </property>
+    </widget>
+    <widget class="QELabel" name="remainingTime">
+     <property name="geometry">
+      <rect>
+       <x>1004</x>
+       <y>30</y>
+       <width>60</width>
+       <height>22</height>
+      </rect>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):getTime</string>
+     </property>
+    </widget>
+    <widget class="QEPushButton" name="btnSaturationEnable">
+     <property name="geometry">
+      <rect>
+       <x>861</x>
+       <y>30</y>
+       <width>65</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Enable</string>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):disableSat</string>
+     </property>
+     <property name="pressText">
+      <string>0</string>
+     </property>
+     <property name="clickText">
+      <string>0</string>
+     </property>
+    </widget>
+    <widget class="QEPushButton" name="btnSaturationDisable">
+     <property name="geometry">
+      <rect>
+       <x>926</x>
+       <y>30</y>
+       <width>65</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Disable</string>
+     </property>
+     <property name="variable" stdset="0">
+      <string>HEATER$(num):disableSat</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QELabel</class>
+   <extends>QLabel</extends>
+   <header>QELabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QENumericEdit</class>
+   <extends>QWidget</extends>
+   <header>QENumericEdit.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QEPushButton</class>
+   <extends>QPushButton</extends>
+   <header>QEPushButton.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QESimpleShape</class>
+   <extends>QSimpleShape</extends>
+   <header>QESimpleShape.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QSimpleShape</class>
+   <extends>QWidget</extends>
+   <header>QSimpleShape.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
