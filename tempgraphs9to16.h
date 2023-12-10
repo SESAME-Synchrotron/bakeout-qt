@@ -2,6 +2,7 @@
 #define TEMPGRAPHS9TO16_H
 
 #include <QMainWindow>
+#include <widgets/heater_widget.h>
 
 namespace Ui {
 class TempGraphs9To16;

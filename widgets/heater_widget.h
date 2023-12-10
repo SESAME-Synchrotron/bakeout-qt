@@ -12,7 +12,7 @@ class heater_widget : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit heater_widget(QWidget *parent = nullptr);
+    explicit heater_widget(QString num, QWidget *parent = nullptr);
     ~heater_widget();
 
 private:
