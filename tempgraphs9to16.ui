@@ -6,71 +6,38 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>472</width>
-    <height>289</height>
+    <width>921</width>
+    <height>910</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>921</width>
+    <height>910</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>960</width>
+    <height>910</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="ltFooter_2">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>0</y>
-      <width>450</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QGroupBox {
-	background-color: rgb(255, 255, 255);
-    border: 1px solid black;
-    border-radius: 5px;
-    margin-top: 0.5em;
-}
-
-QGroupBox::title {
-    subcontrol-origin: margin;
-    left: 10px;
-    padding: 0 3px 0 3px;
-}</string>
-    </property>
-    <property name="title">
-     <string/>
-    </property>
-    <widget class="QLabel" name="labelTitle">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>10</y>
-       <width>430</width>
-       <height>50</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>18</pointsize>
-       <weight>50</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Temperature Graphs 9 To 16</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-    </widget>
-   </widget>
    <widget class="QGroupBox" name="ltFooter">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>220</y>
-      <width>450</width>
+      <y>841</y>
+      <width>900</width>
       <height>61</height>
      </rect>
     </property>
@@ -129,8 +96,238 @@ QGroupBox::title {
      </item>
     </layout>
    </widget>
+   <widget class="QGroupBox" name="ltFooter_2">
+    <property name="geometry">
+     <rect>
+      <x>4</x>
+      <y>-1</y>
+      <width>910</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QGroupBox {
+	background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 0.5em;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 10px;
+    padding: 0 3px 0 3px;
+}</string>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QLabel" name="labelTitle">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>10</y>
+       <width>910</width>
+       <height>50</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Temperature Graphs 9 To 16</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>74</y>
+      <width>902</width>
+      <height>770</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QEPlot" name="pltHeater9">
+         <property name="variable1" stdset="0">
+          <string>HEATER9:getTemp</string>
+         </property>
+         <property name="traceLegend1">
+          <string/>
+         </property>
+         <property name="title">
+          <string>Heater 9</string>
+         </property>
+         <property name="xUnit">
+          <string>Time</string>
+         </property>
+         <property name="yUnit">
+          <string>Temperature Reading</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QEPlot" name="pltHeater11">
+         <property name="variable1" stdset="0">
+          <string>HEATER11:getTemp</string>
+         </property>
+         <property name="traceLegend1">
+          <string/>
+         </property>
+         <property name="title">
+          <string>Heater 11</string>
+         </property>
+         <property name="xUnit">
+          <string>Time</string>
+         </property>
+         <property name="yUnit">
+          <string>Temperature Reading</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QEPlot" name="pltHeater13">
+         <property name="variable1" stdset="0">
+          <string>HEATER13:getTemp</string>
+         </property>
+         <property name="traceLegend1">
+          <string/>
+         </property>
+         <property name="title">
+          <string>Heater 13</string>
+         </property>
+         <property name="xUnit">
+          <string>Time</string>
+         </property>
+         <property name="yUnit">
+          <string>Temperature Reading</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QEPlot" name="pltHeater15">
+         <property name="variable1" stdset="0">
+          <string>HEATER15:getTemp</string>
+         </property>
+         <property name="title">
+          <string>Heater 15</string>
+         </property>
+         <property name="xUnit">
+          <string>Time</string>
+         </property>
+         <property name="yUnit">
+          <string>Temperature Reading</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QEPlot" name="pltHeater10">
+         <property name="variable1" stdset="0">
+          <string>HEATER10:getTemp</string>
+         </property>
+         <property name="traceLegend1">
+          <string/>
+         </property>
+         <property name="title">
+          <string>Heater 10</string>
+         </property>
+         <property name="xUnit">
+          <string>Time</string>
+         </property>
+         <property name="yUnit">
+          <string>Temperature Reading</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QEPlot" name="pltHeater12">
+         <property name="variable1" stdset="0">
+          <string>HEATER12:getTemp</string>
+         </property>
+         <property name="traceLegend1">
+          <string/>
+         </property>
+         <property name="title">
+          <string>Heater 12</string>
+         </property>
+         <property name="xUnit">
+          <string>Time</string>
+         </property>
+         <property name="yUnit">
+          <string>Temperature Reading</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QEPlot" name="pltHeater14">
+         <property name="variable1" stdset="0">
+          <string>HEATER14:getTemp</string>
+         </property>
+         <property name="traceLegend1">
+          <string/>
+         </property>
+         <property name="title">
+          <string>Heater 14</string>
+         </property>
+         <property name="xUnit">
+          <string>Time</string>
+         </property>
+         <property name="yUnit">
+          <string>Temperature Reading</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QEPlot" name="pltHeater16">
+         <property name="variable1" stdset="0">
+          <string>HEATER16:getTemp</string>
+         </property>
+         <property name="title">
+          <string>Heater 16</string>
+         </property>
+         <property name="xUnit">
+          <string>Time</string>
+         </property>
+         <property name="yUnit">
+          <string>Temperature Reading</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QEPlot</class>
+   <extends>QEFrame</extends>
+   <header>QEPlot.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QEFrame</class>
+   <extends>QFrame</extends>
+   <header>QEFrame.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
