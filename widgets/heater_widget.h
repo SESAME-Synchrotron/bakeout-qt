@@ -2,6 +2,7 @@
 #define HEATER_WIDGET_H
 
 #include <QMainWindow>
+#include <QString>
 
 namespace Ui {
 class heater_widget;

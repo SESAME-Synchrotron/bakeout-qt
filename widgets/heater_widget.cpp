@@ -6,7 +6,8 @@ heater_widget::heater_widget(QString num, QWidget *parent) :
     ui(new Ui::heater_widget)
 {
     ui->setupUi(this);
-    ui->groupBox->setTitle("Heater " + num);
+
+    ui->heaterName->setText("Heater " + QString::asprintf("%02d", num.toInt()));
     ui->ledHeaterEnable->setVariableNameSubstitutionsProperty("num=" + num);
     ui->btnHeaterEnable->setVariableNameSubstitutionsProperty("num=" + num);
     ui->btnHeaterDisable->setVariableNameSubstitutionsProperty("num=" + num);

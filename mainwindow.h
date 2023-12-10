@@ -7,8 +7,7 @@
     object->show();
 
 #include <QMainWindow>
-#include <heaters1to8.h>
-#include <heaters9to16.h>
+#include <widgets/heater_widget.h>
 #include <tempgraphs1to8.h>
 #include <tempgraphs9to16.h>
 
@@ -27,8 +26,6 @@ public:
 private:
     Ui::MainWindow *ui;
 
-    Heaters1To8*    heaters1To8;
-    Heaters9To16*   heaters9To16;
     TempGraphs1To8* tempgraphs1To8;
     TempGraphs9To16* tempgraphs9To16;
 };
