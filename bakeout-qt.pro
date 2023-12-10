@@ -12,20 +12,17 @@ TARGET = $$(HOME)/bin/bakeout-qt
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    tempgraphs1to8.cpp \
-    tempgraphs9to16.cpp \
+    temperaturegraph.cpp \
     widgets/heater_widget.cpp
 
 HEADERS += \
     mainwindow.h \
-    tempgraphs1to8.h \
-    tempgraphs9to16.h \
+    temperaturegraph.h \
     widgets/heater_widget.h
 
 FORMS += \
     mainwindow.ui \
-    tempgraphs1to8.ui \
-    tempgraphs9to16.ui \
+    temperaturegraph.ui \
     widgets/heater_widget.ui
 
 # Default rules for deployment.

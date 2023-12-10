@@ -7,6 +7,9 @@ heater_widget::heater_widget(QString num, QWidget *parent) :
 {
     ui->setupUi(this);
 
+    this->graph = NULL;
+    QObject::connect(this->ui->btnTempGraph, &QPushButton::clicked, this, [this, num](){ OPEN_UI(this->graph, TemperatureGraph, num, this) });
+
     ui->heaterName->setText("Heater " + QString::asprintf("%02d", num.toInt()));
     ui->ledHeaterEnable->setVariableNameSubstitutionsProperty("num=" + num);
     ui->btnHeaterEnable->setVariableNameSubstitutionsProperty("num=" + num);

@@ -8,8 +8,6 @@
 
 #include <QMainWindow>
 #include <widgets/heater_widget.h>
-#include <tempgraphs1to8.h>
-#include <tempgraphs9to16.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -25,8 +23,5 @@ public:
 
 private:
     Ui::MainWindow *ui;
-
-    TempGraphs1To8* tempgraphs1To8;
-    TempGraphs9To16* tempgraphs9To16;
 };
 #endif // MAINWINDOW_H

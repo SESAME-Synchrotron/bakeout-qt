@@ -7,12 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    this->tempgraphs1To8    = NULL;
-    this->tempgraphs9To16 = NULL;
-
     QObject::connect(this->ui->btnClose, SIGNAL(clicked()), this, SLOT(close()));
-    QObject::connect(this->ui->btnTempGraphs1To8, &QPushButton::clicked, this, [this](){ OPEN_UI(this->tempgraphs1To8, TempGraphs1To8, this); });
-    QObject::connect(this->ui->btnTempGraphs9To16, &QPushButton::clicked, this, [this](){ OPEN_UI(this->tempgraphs9To16, TempGraphs9To16, this); });
 
     ui->ltHeater->addWidget(new heater_widget("1"));
     ui->ltHeater->addWidget(new heater_widget("2"));

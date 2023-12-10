@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TemperatureGraph</class>
+ <widget class="QMainWindow" name="TemperatureGraph">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>560</width>
+    <height>565</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Graph</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QEPlot" name="pltHeater">
+    <property name="geometry">
+     <rect>
+      <x>9</x>
+      <y>9</y>
+      <width>540</width>
+      <height>550</height>
+     </rect>
+    </property>
+    <property name="variable1" stdset="0">
+     <string>HEATER$(num):getTemp</string>
+    </property>
+    <property name="variableSubstitutions" stdset="0">
+     <string/>
+    </property>
+    <property name="traceLegend1">
+     <string/>
+    </property>
+    <property name="title">
+     <string>Heater $(num)</string>
+    </property>
+    <property name="xUnit">
+     <string>Time</string>
+    </property>
+    <property name="yUnit">
+     <string>Temp Reading</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QEPlot</class>
+   <extends>QEFrame</extends>
+   <header>QEPlot.h</header>
+  </customwidget>
+  <customwidget>
+   <class>QEFrame</class>
+   <extends>QFrame</extends>
+   <header>QEFrame.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
