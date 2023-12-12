@@ -8,7 +8,10 @@
 
 #include <QMainWindow>
 #include <QString>
+#include <qepicspv.h>
 #include <temperaturegraph.h>
+#include "confirmationdialog.h"
+#include "client.h"
 
 namespace Ui {
 class heater_widget;
@@ -22,10 +25,19 @@ public:
     explicit heater_widget(QString num, QWidget *parent = nullptr);
     ~heater_widget();
 
+private slots:
+    void on_btnSaturationDisable_clicked();
+    void on_satEnableDisable(QVariant);
+
 private:
     Ui::heater_widget *ui;
 
+    QString num;
+
     TemperatureGraph* graph;
+    ConfirmationDialog* confirmationDialog;
+
+    QEpicsPV* saturationDisabled;
 };
 
 #endif // HEATER_WIDGET_H

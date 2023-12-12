@@ -8,7 +8,13 @@ heater_widget::heater_widget(QString num, QWidget *parent) :
     ui->setupUi(this);
 
     this->graph = NULL;
+    this->confirmationDialog = NULL;
+    this->num = num;
+    this->saturationDisabled = new QEpicsPV("HEATER" + num + ":disableSat");
+
     QObject::connect(this->ui->btnTempGraph, &QPushButton::clicked, this, [this, num](){ OPEN_UI(this->graph, TemperatureGraph, num, this) });
+    QObject::connect(this->saturationDisabled, SIGNAL(valueChanged(QVariant)), this, SLOT(on_satEnableDisable(QVariant)));
+    QObject::connect(this->saturationDisabled, SIGNAL(valueInited(QVariant)), this, SLOT(on_satEnableDisable(QVariant)));
 
     ui->heaterName->setText("Heater " + QString::asprintf("%02d", num.toInt()));
     ui->ledHeaterEnable->setVariableNameSubstitutionsProperty("num=" + num);
@@ -33,4 +39,34 @@ heater_widget::heater_widget(QString num, QWidget *parent) :
 heater_widget::~heater_widget()
 {
     delete ui;
+}
+
+void ::heater_widget::on_satEnableDisable(QVariant status)
+{
+    int enabled = 0;
+
+    QString greenColor = "138, 226, 52";
+    QString redColor = "255, 0, 0";
+
+    if (status == enabled)
+    {
+        this->ui->btnSaturationEnable->setStyleSheet("background-color: rgb(" + greenColor + ")");
+        this->ui->btnSaturationDisable->setStyleSheet("");
+    } else
+    {
+        this->ui->btnSaturationEnable->setStyleSheet("");
+        this->ui->btnSaturationDisable->setStyleSheet("background-color: rgb(" + redColor + ")");
+    }
+}
+
+void heater_widget::on_btnSaturationDisable_clicked()
+{
+    QString pv_name = "HEATER" + this->num + ":disableSat";
+    if (!this->saturationDisabled->get().toBool())
+    {
+        QString message = "Caution: If you turn off this option and heater " + num + " becomes saturated (no temperature increase for a while), other heaters won't be disabled. Be careful when disabling this option.";
+        OPEN_UI(this->confirmationDialog, ConfirmationDialog, message, [pv_name](){ Client::writePV(pv_name, "1"); }, this);
+    } else {
+        Client::writePV(pv_name, "1");
+    }
 }

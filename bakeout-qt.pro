@@ -10,17 +10,22 @@ TARGET = $$(HOME)/bin/bakeout-qt
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    client.cpp \
+    confirmationdialog.cpp \
     main.cpp \
     mainwindow.cpp \
     temperaturegraph.cpp \
     widgets/heater_widget.cpp
 
 HEADERS += \
+    client.h \
+    confirmationdialog.h \
     mainwindow.h \
     temperaturegraph.h \
     widgets/heater_widget.h
 
 FORMS += \
+    confirmationdialog.ui \
     mainwindow.ui \
     temperaturegraph.ui \
     widgets/heater_widget.ui
