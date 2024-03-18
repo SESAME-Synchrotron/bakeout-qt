@@ -1,0 +1,10 @@
+*.o
+moc_*
+moc*
+ui_*
+Debug/
+Release/
+Profile/
+Makefile
+.qmake.stash
+bakeout-qt.pro.user*

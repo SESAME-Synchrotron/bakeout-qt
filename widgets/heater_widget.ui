@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1231</width>
-    <height>23</height>
+    <height>20</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -19,128 +19,90 @@
   <property name="minimumSize">
    <size>
     <width>0</width>
-    <height>23</height>
+    <height>20</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>16777215</width>
-    <height>23</height>
+    <height>20</height>
    </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QELabel" name="remainingTime">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>1065</x>
       <y>0</y>
-      <width>1232</width>
-      <height>24</height>
+      <width>80</width>
+      <height>20</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="variable" stdset="0">
+     <string>HEATER$(num):getTime</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnTempGraph">
+    <property name="geometry">
+     <rect>
+      <x>1151</x>
+      <y>0</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>graph</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>867</x>
+      <y>-1</y>
+      <width>192</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="ltSaturation" stretch="1,1,1">
+     <property name="spacing">
+      <number>0</number>
+     </property>
      <item>
-      <layout class="QHBoxLayout" name="ltHeaterEnable">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QLabel" name="heaterName">
-         <property name="text">
-          <string>Heater##</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QESimpleShape" name="ledHeaterEnable">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="colour0" stdset="0">
-          <color>
-           <red>186</red>
-           <green>189</green>
-           <blue>182</blue>
-          </color>
-         </property>
-         <property name="colour1" stdset="0">
-          <color>
-           <red>5</red>
-           <green>240</green>
-           <blue>5</blue>
-          </color>
-         </property>
-         <property name="variable" stdset="0">
-          <string>HEATER$(num):isEnabled</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QEPushButton" name="btnHeaterEnable">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Enable</string>
-         </property>
-         <property name="variable" stdset="0">
-          <string>HEATER$(num):enable</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QEPushButton" name="btnHeaterDisable">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Disable</string>
-         </property>
-         <property name="variable" stdset="0">
-          <string>HEATER$(num):disable</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="QELabel" name="temperatureReading">
+      <widget class="QESimpleShape" name="ledSaturationStatus">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
@@ -149,7 +111,156 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>80</width>
+         <width>30</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="colour0" stdset="0">
+        <color>
+         <red>60</red>
+         <green>20</green>
+         <blue>20</blue>
+        </color>
+       </property>
+       <property name="colour1" stdset="0">
+        <color>
+         <red>240</red>
+         <green>5</green>
+         <blue>5</blue>
+        </color>
+       </property>
+       <property name="variable" stdset="0">
+        <string>HEATER$(num):isSat</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QEPushButton" name="btnSaturationEnable">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Enable</string>
+       </property>
+       <property name="variable" stdset="0">
+        <string>HEATER$(num):disableSat</string>
+       </property>
+       <property name="pressText">
+        <string>0</string>
+       </property>
+       <property name="clickText">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QEPushButton" name="btnSaturationDisable">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Disable</string>
+       </property>
+       <property name="variable" stdset="0">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QESimpleShape" name="ledHeaterStatus">
+    <property name="geometry">
+     <rect>
+      <x>351</x>
+      <y>0</y>
+      <width>30</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>30</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="colour0" stdset="0">
+     <color>
+      <red>186</red>
+      <green>189</green>
+      <blue>182</blue>
+     </color>
+    </property>
+    <property name="colour1" stdset="0">
+     <color>
+      <red>5</red>
+      <green>240</green>
+      <blue>5</blue>
+     </color>
+    </property>
+    <property name="variable" stdset="0">
+     <string>HEATER$(num):getStatus</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>387</x>
+      <y>-1</y>
+      <width>170</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="ltSetpoint" stretch="1,1,1">
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QENumericEdit" name="temperatureSetpoint">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
          <height>20</height>
         </size>
        </property>
@@ -160,14 +271,227 @@
         </size>
        </property>
        <property name="variable" stdset="0">
-        <string>HEATER$(num):getTemp</string>
+        <string>HEATER$(num):setSetPoint</string>
+       </property>
+       <property name="precision">
+        <number>1</number>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QESimpleShape" name="ledHeaterStatus">
+      <widget class="QELabel" name="temperatureSetpointReadback">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="variable" stdset="0">
+        <string>HEATER$(num):getSetPoint</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QELabel" name="incrementSetPoint">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="variable" stdset="0">
+        <string>HEATER$(num):getIncPoint</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QELabel" name="temperatureReading">
+    <property name="geometry">
+     <rect>
+      <x>265</x>
+      <y>0</y>
+      <width>80</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>80</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>20</height>
+     </size>
+    </property>
+    <property name="variable" stdset="0">
+     <string>HEATER$(num):getTemp</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>703</x>
+      <y>-1</y>
+      <width>158</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="ltInterlock" stretch="0,1,1">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QESimpleShape" name="ledInterlockStatus">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>30</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="colour0" stdset="0">
+        <color>
+         <red>240</red>
+         <green>5</green>
+         <blue>5</blue>
+        </color>
+       </property>
+       <property name="colour1" stdset="0">
+        <color>
+         <red>60</red>
+         <green>20</green>
+         <blue>20</blue>
+        </color>
+       </property>
+       <property name="variable" stdset="0">
+        <string>HEATER$(num):isEnabled</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QENumericEdit" name="interlockSetpoint">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="variable" stdset="0">
+        <string>HEATER$(num):setInterlock</string>
+       </property>
+       <property name="precision">
+        <number>1</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QELabel" name="interlockReadback">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="variable" stdset="0">
+        <string>HEATER$(num):getInterlock</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>1</x>
+      <y>-1</y>
+      <width>258</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="ltHeaterEnable">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="heaterName">
+       <property name="text">
+        <string>Heater##</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QESimpleShape" name="ledHeaterEnable">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -199,377 +523,12 @@
         </color>
        </property>
        <property name="variable" stdset="0">
-        <string>HEATER$(num):getStatus</string>
+        <string>HEATER$(num):isEnabled</string>
        </property>
       </widget>
      </item>
      <item>
-      <layout class="QHBoxLayout" name="ltSetpoint" stretch="1,1,1">
-       <property name="spacing">
-        <number>6</number>
-       </property>
-       <item>
-        <widget class="QENumericEdit" name="temperatureSetpoint">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="variable" stdset="0">
-          <string>HEATER$(num):setSetPoint</string>
-         </property>
-         <property name="precision">
-          <number>1</number>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QELabel" name="temperatureSetpointReadback">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="variable" stdset="0">
-          <string>HEATER$(num):getSetPoint</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QELabel" name="incrementSetPoint">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="variable" stdset="0">
-          <string>HEATER$(num):getIncPoint</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="ltHeatRate" stretch="1,1">
-       <item>
-        <widget class="QENumericEdit" name="temperatureSetRate">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="variable" stdset="0">
-          <string>HEATER$(num):setRate</string>
-         </property>
-         <property name="leadingZeros">
-          <number>2</number>
-         </property>
-         <property name="precision">
-          <number>1</number>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QELabel" name="temperatureRateReadback">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="variable" stdset="0">
-          <string>HEATER$(num):getRate</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="ltInterlock" stretch="0,1,1">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QESimpleShape" name="ledInterlockStatus">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="colour0" stdset="0">
-          <color>
-           <red>240</red>
-           <green>5</green>
-           <blue>5</blue>
-          </color>
-         </property>
-         <property name="colour1" stdset="0">
-          <color>
-           <red>60</red>
-           <green>20</green>
-           <blue>20</blue>
-          </color>
-         </property>
-         <property name="variable" stdset="0">
-          <string>HEATER$(num):isEnabled</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QENumericEdit" name="interlockSetpoint">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="variable" stdset="0">
-          <string>HEATER$(num):setInterlock</string>
-         </property>
-         <property name="precision">
-          <number>1</number>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QELabel" name="interlockReadback">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="variable" stdset="0">
-          <string>HEATER$(num):getInterlock</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="ltSaturation" stretch="1,1,1">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <item>
-        <widget class="QESimpleShape" name="ledSaturationStatus">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>30</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="colour0" stdset="0">
-          <color>
-           <red>60</red>
-           <green>20</green>
-           <blue>20</blue>
-          </color>
-         </property>
-         <property name="colour1" stdset="0">
-          <color>
-           <red>240</red>
-           <green>5</green>
-           <blue>5</blue>
-          </color>
-         </property>
-         <property name="variable" stdset="0">
-          <string>HEATER$(num):isSat</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QEPushButton" name="btnSaturationEnable">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Enable</string>
-         </property>
-         <property name="variable" stdset="0">
-          <string>HEATER$(num):disableSat</string>
-         </property>
-         <property name="pressText">
-          <string>0</string>
-         </property>
-         <property name="clickText">
-          <string>0</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QEPushButton" name="btnSaturationDisable">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>16777215</width>
-           <height>20</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Disable</string>
-         </property>
-         <property name="variable" stdset="0">
-          <string/>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <widget class="QELabel" name="remainingTime">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>80</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>16777215</width>
-         <height>20</height>
-        </size>
-       </property>
-       <property name="variable" stdset="0">
-        <string>HEATER$(num):getTime</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btnTempGraph">
+      <widget class="QEPushButton" name="btnHeaterEnable">
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -583,7 +542,100 @@
         </size>
        </property>
        <property name="text">
-        <string>graph</string>
+        <string>Enable</string>
+       </property>
+       <property name="variable" stdset="0">
+        <string>HEATER$(num):enable</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QEPushButton" name="btnHeaterDisable">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Disable</string>
+       </property>
+       <property name="variable" stdset="0">
+        <string>HEATER$(num):disable</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>563</x>
+      <y>-1</y>
+      <width>134</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="ltHeatRate" stretch="1,1">
+     <item>
+      <widget class="QENumericEdit" name="temperatureSetRate">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="variable" stdset="0">
+        <string>HEATER$(num):setRate</string>
+       </property>
+       <property name="leadingZeros">
+        <number>2</number>
+       </property>
+       <property name="precision">
+        <number>1</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QELabel" name="temperatureRateReadback">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="variable" stdset="0">
+        <string>HEATER$(num):getRate</string>
        </property>
       </widget>
      </item>
