@@ -88,7 +88,7 @@
      <string>graph</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>867</x>
@@ -237,7 +237,7 @@
      <string>HEATER$(num):getStatus</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>387</x>
@@ -361,7 +361,7 @@
      <string>HEATER$(num):getTemp</string>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>703</x>
@@ -409,7 +409,7 @@
         </color>
        </property>
        <property name="variable" stdset="0">
-        <string>HEATER$(num):isEnabled</string>
+        <string>HEATER$(num):isInterlock</string>
        </property>
       </widget>
      </item>
@@ -468,7 +468,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>1</x>
@@ -573,7 +573,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>563</x>
