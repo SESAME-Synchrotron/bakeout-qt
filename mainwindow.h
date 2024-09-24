@@ -8,6 +8,7 @@
 
 #include <QMainWindow>
 #include <widgets/heater_widget.h>
+#include <temperaturegraphs.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,6 +21,9 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
+private slots:
+    void on_btnGraphs_clicked();
 
 private:
     Ui::MainWindow *ui;

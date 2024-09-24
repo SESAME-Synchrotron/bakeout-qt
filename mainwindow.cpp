@@ -35,3 +35,9 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_btnGraphs_clicked()
+{
+    TemperatureGraphs* graphs = new TemperatureGraphs();
+    graphs->show();
+}
